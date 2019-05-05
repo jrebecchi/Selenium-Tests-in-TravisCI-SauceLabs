@@ -8,13 +8,15 @@ var webdriver = require('selenium-webdriver'),
     request = require('request');
 
 var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445/wd/hub";
-//var browsers = [
-    var browser = {browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1920x1080' };
-    //{ browserName: 'Chrome', platform: 'Mac OSX 10.14', version: '71x64', screen_resolution: '1366x768' },
-    //{ browserName: 'Internet Explorer', platform: 'Windows 8.1', version: '11', screen_resolution: '1366x768' }
-//];
 
-//var flows = browsers.map(function (browser) {
+var browsers = [
+    { browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1920x1080' },
+    { browserName: 'Safari', platform: 'Mac OSX 10.14', version: '71x64', screen_resolution: '1920x1080' },
+    { browserName: 'Internet Explorer', platform: 'Windows 8.1', version: '11', screen_resolution: '1920x1080' },
+    { browserName: 'Firefox', platform: 'Windows 10', version: '59', screen_resolution: '1920x1080' },
+];
+
+browsers.map(function (browser) {
 
     var caps = {
         name: 'Node Example',
@@ -58,4 +60,4 @@ var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445/wd/hub";
             throw err;
         }
     });
-//});
+});
