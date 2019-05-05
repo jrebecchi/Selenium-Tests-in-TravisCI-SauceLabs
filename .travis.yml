@@ -1,0 +1,20 @@
+sudo: false
+
+language: node_js
+node_js:
+  - 10
+
+dist: trusty
+
+jobs:
+   include:
+    - stage: "Tests"
+      script: npm run test
+
+before_install:
+  - npm install
+
+addons:
+  sauce_connect:
+    username: "JohannC"
+    access_key: "22e26941-27d1-4713-aa3a-cacb0fd80ae7"
