@@ -17,13 +17,14 @@ var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445";
 //var flows = browsers.map(function (browser) {
 
     var caps = {
-        name: 'Node Parallel Example',
+        name: 'Node Example',
         browserName: browser.browserName,
         version: browser.version,
         platform: browser.platform,
         screen_resolution: browser.screen_resolution,
         username: username,
-        password: authkey
+        password: authkey,
+        'tunnel-identifier': process.env.TUNNEL_IDENTIFIER,
     };
     it("Simple google test", async function () {
         try {
