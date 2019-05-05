@@ -6,13 +6,13 @@ var webdriver = require('selenium-webdriver'),
     request = require('request');
 
 var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445";
-var browsers = [
-    { browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1366x768' },
+//var browsers = [
+    var browser = {browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1366x768' };
     //{ browserName: 'Chrome', platform: 'Mac OSX 10.14', version: '71x64', screen_resolution: '1366x768' },
     //{ browserName: 'Internet Explorer', platform: 'Windows 8.1', version: '11', screen_resolution: '1366x768' }
-];
+//];
 
-var flows = browsers.map(function (browser) {
+//var flows = browsers.map(function (browser) {
 
     var caps = {
         name: 'Node Parallel Example',
@@ -30,14 +30,14 @@ var flows = browsers.map(function (browser) {
                 .withCapabilities(caps)
                 .build();
 
-            /*await driver.getSession().then(function (session) {
+            await driver.getSession().then(function (session) {
                 var sessionId = session.id_; //need for API calls
                 console.log('Session ID: ', sessionId);
                 console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
             });
 
             await driver.get('http://www.google.com');
-            var element = await driver.findElement(webdriver.By.name('q'));
+            /*var element = await driver.findElement(webdriver.By.name('q'));
             await element.sendKeys('cross browser testing');
             await element.submit();
             await driver.getTitle().then(function (title) {
