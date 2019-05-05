@@ -8,6 +8,8 @@ jobs:
     - stage: Tests
       script: npm run test
 before_install:
+  - echo $SAUCE_ACCESS_KEY
+  - echo SAUCE_ACCESS_KEY
   - npm install
 addons:
   sauce_connect:
