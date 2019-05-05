@@ -11,7 +11,7 @@ var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445/wd/hub";
 
 var browsers = [
     { browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1920x1080' },
-    { browserName: 'Safari', platform: 'OS X 10.11', version: '42.0', screen_resolution: '1920x1080' },
+    { browserName: 'Safari', platform: 'OS X 10.11', version: '8', screen_resolution: '1920x1080' },
     { browserName: 'Internet Explorer', platform: 'Windows 8.1', version: '11', screen_resolution: '1920x1080' },
     { browserName: 'Firefox', platform: 'Windows 10', version: '59', screen_resolution: '1920x1080' },
 ];
