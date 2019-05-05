@@ -23,7 +23,7 @@ var flows = browsers.map(function (browser) {
         username: username,
         password: authkey
     };
-    async function parallelExample() {
+    it("Simple google test", async function parallelExample() {
         try {
             var driver = new webdriver.Builder()
                 .usingServer(remoteHub)
@@ -54,6 +54,5 @@ var flows = browsers.map(function (browser) {
             console.error('Exception!\n', err.stack, '\n');
             driver.quit();
         }
-    }
-    parallelExample();
+    });
 });
