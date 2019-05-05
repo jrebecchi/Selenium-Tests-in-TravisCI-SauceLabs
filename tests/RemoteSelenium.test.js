@@ -54,4 +54,4 @@ var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445";
             driver.quit();
         }
     });
-});
+//});
