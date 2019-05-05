@@ -36,8 +36,8 @@ var flows = browsers.map(function (browser) {
                 console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
             });
 
-            await driver.get('http://www.google.com');
-            /*var element = await driver.findElement(webdriver.By.name('q'));
+            /*await driver.get('http://www.google.com');
+            var element = await driver.findElement(webdriver.By.name('q'));
             await element.sendKeys('cross browser testing');
             await element.submit();
             await driver.getTitle().then(function (title) {
