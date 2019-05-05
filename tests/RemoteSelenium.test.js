@@ -23,20 +23,20 @@ var flows = browsers.map(function (browser) {
         username: username,
         password: authkey
     };
-    it("Simple google test", async function parallelExample() {
+    it("Simple google test", async function () {
         try {
             var driver = new webdriver.Builder()
                 .usingServer(remoteHub)
                 .withCapabilities(caps)
                 .build();
 
-            await driver.getSession().then(function (session) {
+            /*await driver.getSession().then(function (session) {
                 var sessionId = session.id_; //need for API calls
                 console.log('Session ID: ', sessionId);
                 console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
             });
 
-            /*await driver.get('http://www.google.com');
+            await driver.get('http://www.google.com');
             var element = await driver.findElement(webdriver.By.name('q'));
             await element.sendKeys('cross browser testing');
             await element.submit();
