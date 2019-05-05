@@ -17,4 +17,4 @@ before_install:
 addons:
   sauce_connect:
     username: "JohannC"
-    access_key: "22e26941-27d1-4713-aa3a-cacb0fd80ae7"
+    access_key: SAUCE_ACCESS_KEY
