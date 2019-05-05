@@ -7,7 +7,7 @@ var webdriver = require('selenium-webdriver'),
     SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
     request = require('request');
 
-var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445";
+var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445/wd/hub";
 //var browsers = [
     var browser = {browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1366x768' };
     //{ browserName: 'Chrome', platform: 'Mac OSX 10.14', version: '71x64', screen_resolution: '1366x768' },
