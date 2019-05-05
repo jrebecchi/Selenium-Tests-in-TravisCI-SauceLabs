@@ -8,14 +8,14 @@ jobs:
     - stage: Tests
       script: npm run test
 before_install:
-  - echo $SAUCE_ACCESS_KEY
-  - echo SAUCE_ACCESS_KEY
   - npm install
 addons:
   sauce_connect:
     username: JohannC
-    access_key: SAUCE_ACCESS_KEY
+    access_key: 
+      - secure: >-
+        KkXG2WwEBWBYwA+MzfNR7CgEfizOQNEdJfpTz9tidSv2rkD4qIsIWnuILsOXPQ8ZGcc+SDdavJjTi95bO8uDjct84l+MYDau07zluT9QTixDY0Y29tIXerfO0d7x3TVeihmoVDAtGuYt6QVQm7RBYAe4tlYxra23F8x8YKTtfVcsC4dpKeniv9cY/3Ii/296zO/Wn0LHofkJ2+EFswT8gtwEPr/3yyjSq0YTxuvn2NQS0gcFAvXD62sWTRIdjPMilwXM1/Gg2zxwrPny2J3PRmV7YdmwRDERqmzzE3gHmjAqHAC6WIzNxWVMVveh9JE6lM8bNCHgGPU78v9WnlSlXIlF65beDXmNCgUHiXGpOcEQMWdVR51qnz73VB8V2jS47eNb6yE8n3KOgm/l0HOyQnn1fMa5+zUIzVOlfpr9zTuqwlDSi+vGqiDxIH+rYwP8mWU5waX/PdHOl/Zx1PmxCmJ2eZU3iWglH+X69OSQDXCnZPiKMKk9ZOrxSgpyXCXNGh7G9/u6/dX2k7gOsw5bdvoHtb9HqaWe/PXpRiW9voXqmP9gKRh7sPdgFzixC4HK5crWYC1zZ1sqfFNp8uPkyUXM/pEzuV90+yuSI16k/cHjhWXjhdNn4Nyjbomh+L6pTJyyEWCutYQP/Kv0tGI4ICYMfGlovB3qFZA1iXhfVGQ=
 env:
   global:
-    - secure: >-
-        jbAFu/jWgiXgSbGWeElV9aliRJF6Ov1wg/6koXoUiL8xFWtp6Uz5sGoSPQN/bhYSGrqOMnPRGbjmusVQ9oSI5cEZNXTAQTjgU/pG2hf52WHG6z5O8ocihMG3LK+ViqQldAsrfwgLPHpqgMaH4BPy6WzXsHMEJQnC8ehJqQqdUFUedPDMbDMXJagoDwJKDvGrZcBjsCjaRg0jhTA44AtQUlh2vqZHWtHTCZnE9wtQ3PDVcMzPtSZPcqjUfHWIBV55tTaSuwADfBU+oTZIzFRoYgkhmiJFWtlK5Itj9WVosUD/+3MQWrqQlBgxfqjuzYq7bFqA0+/bLhR5O3Fyiu2ED3HNb16rS6qkKC9N+vtPcgKwRMPZCsnhzOtSXXhMVOhoyDG/12753CVYZK89CAWNbz2FDcS01Dgs6GBJAxc948pAgBt2M82Q2mLHJZs8pVhVVL+Hl5JRWyXQeFdASAFRmGGbkTnuW7ra6SUXDiKi8J24OEcAqrxgUqa9R04GbKcrjuF6GrtKZtCLk/mv0wubp4jTr1YxwFqPqKqWgdhsD76zOmMaak7k55W0dOnkiP+G/32TZWC3j77jlRZPeYonp0hjMbtSu7CV2AffJdmAtveiny8hG+R0gMg1ujG2RJkIFVHM+VapWV0hJ1SwNS2ffsCqvqUYeRKdTp2ltY/OoQQ=
+   
+    
