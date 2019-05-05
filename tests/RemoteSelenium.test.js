@@ -37,7 +37,7 @@ var flows = browsers.map(function (browser) {
             });
 
             await driver.get('http://www.google.com');
-            var element = await driver.findElement(webdriver.By.name('q'));
+            /*var element = await driver.findElement(webdriver.By.name('q'));
             await element.sendKeys('cross browser testing');
             await element.submit();
             await driver.getTitle().then(function (title) {
@@ -45,7 +45,7 @@ var flows = browsers.map(function (browser) {
                 if (title !== ('cross browser testing - Google Search')) {
                     throw Error('Unexpected title: ' + title);
                 }
-            });
+            });*/
             driver.quit();
 
         }
