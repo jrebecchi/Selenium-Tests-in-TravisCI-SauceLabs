@@ -1,5 +1,7 @@
 var username = 'JohannC'; //replace with your email address 
-var authkey = '22e26941-27d1-4713-aa3a-cacb0fd80ae7'; //replace with your authkey  
+var authkey = '22e26941-27d1-4713-aa3a-cacb0fd80ae7'; //replace with your authkey
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 60 * 30
+
 
 var webdriver = require('selenium-webdriver'),
     SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
@@ -30,11 +32,11 @@ var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445";
                 .withCapabilities(caps)
                 .build();
 
-            await driver.getSession().then(function (session) {
+            /*await driver.getSession().then(function (session) {
                 var sessionId = session.id_; //need for API calls
                 console.log('Session ID: ', sessionId);
                 console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
-            });
+            });*/
 
             await driver.get('http://www.google.com');
             /*var element = await driver.findElement(webdriver.By.name('q'));
