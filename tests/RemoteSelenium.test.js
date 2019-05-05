@@ -24,28 +24,34 @@ var flows = browsers.map(function (browser) {
         password: authkey
     };
     it("Simple google test", async function parallelExample() {
-        var driver = new webdriver.Builder()
-            .usingServer(remoteHub)
-            .withCapabilities(caps)
-            .build();
+        try {
+            var driver = new webdriver.Builder()
+                .usingServer(remoteHub)
+                .withCapabilities(caps)
+                .build();
 
-        await driver.getSession().then(function (session) {
-            var sessionId = session.id_; //need for API calls
-            console.log('Session ID: ', sessionId);
-            console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
-        });
+            await driver.getSession().then(function (session) {
+                var sessionId = session.id_; //need for API calls
+                console.log('Session ID: ', sessionId);
+                console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
+            });
 
-        await driver.get('http://www.google.com');
-        var element = await driver.findElement(webdriver.By.name('q'));
-        await element.sendKeys('cross browser testing');
-        await element.submit();
-        await driver.getTitle().then(function (title) {
-            console.log("The title is: " + title);
-            if (title !== ('cross browser testing - Google Search')) {
-                throw Error('Unexpected title: ' + title);
-            }
-        });
-        driver.quit();
+            await driver.get('http://www.google.com');
+            var element = await driver.findElement(webdriver.By.name('q'));
+            await element.sendKeys('cross browser testing');
+            await element.submit();
+            await driver.getTitle().then(function (title) {
+                console.log("The title is: " + title);
+                if (title !== ('cross browser testing - Google Search')) {
+                    throw Error('Unexpected title: ' + title);
+                }
+            });
+            driver.quit();
 
+        }
+        catch (err) {
+            console.error('Exception!\n', err.stack, '\n');
+            driver.quit();
+        }
     });
 });
