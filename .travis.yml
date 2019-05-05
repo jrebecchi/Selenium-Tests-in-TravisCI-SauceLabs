@@ -1,20 +1,19 @@
 sudo: false
-
 language: node_js
 node_js:
   - 10
-
 dist: trusty
-
 jobs:
-   include:
-    - stage: "Tests"
+  include:
+    - stage: Tests
       script: npm run test
-
 before_install:
   - npm install
-
 addons:
   sauce_connect:
-    username: "JohannC"
+    username: JohannC
     access_key: SAUCE_ACCESS_KEY
+env:
+  global:
+    - secure: >-
+        jbAFu/jWgiXgSbGWeElV9aliRJF6Ov1wg/6koXoUiL8xFWtp6Uz5sGoSPQN/bhYSGrqOMnPRGbjmusVQ9oSI5cEZNXTAQTjgU/pG2hf52WHG6z5O8ocihMG3LK+ViqQldAsrfwgLPHpqgMaH4BPy6WzXsHMEJQnC8ehJqQqdUFUedPDMbDMXJagoDwJKDvGrZcBjsCjaRg0jhTA44AtQUlh2vqZHWtHTCZnE9wtQ3PDVcMzPtSZPcqjUfHWIBV55tTaSuwADfBU+oTZIzFRoYgkhmiJFWtlK5Itj9WVosUD/+3MQWrqQlBgxfqjuzYq7bFqA0+/bLhR5O3Fyiu2ED3HNb16rS6qkKC9N+vtPcgKwRMPZCsnhzOtSXXhMVOhoyDG/12753CVYZK89CAWNbz2FDcS01Dgs6GBJAxc948pAgBt2M82Q2mLHJZs8pVhVVL+Hl5JRWyXQeFdASAFRmGGbkTnuW7ra6SUXDiKi8J24OEcAqrxgUqa9R04GbKcrjuF6GrtKZtCLk/mv0wubp4jTr1YxwFqPqKqWgdhsD76zOmMaak7k55W0dOnkiP+G/32TZWC3j77jlRZPeYonp0hjMbtSu7CV2AffJdmAtveiny8hG+R0gMg1ujG2RJkIFVHM+VapWV0hJ1SwNS2ffsCqvqUYeRKdTp2ltY/OoQQ=
