@@ -9,7 +9,7 @@ var webdriver = require('selenium-webdriver'),
 
 var remoteHub = "http://" + username + ":" + authkey + "@localhost:4445/wd/hub";
 //var browsers = [
-    var browser = {browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1366x768' };
+    var browser = {browserName: 'Chrome', platform: 'Windows 10', version: '64', screen_resolution: '1920x1080' };
     //{ browserName: 'Chrome', platform: 'Mac OSX 10.14', version: '71x64', screen_resolution: '1366x768' },
     //{ browserName: 'Internet Explorer', platform: 'Windows 8.1', version: '11', screen_resolution: '1366x768' }
 //];
