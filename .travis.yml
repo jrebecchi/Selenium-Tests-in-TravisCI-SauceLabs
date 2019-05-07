@@ -1,8 +1,11 @@
-sudo: false
+sudo: true
 language: node_js
 node_js:
   - 10
 dist: trusty
+before_script:
+  - npm run start
+  - sleep 2 # give Web server some time to bind to sockets, etc
 jobs:
   include:
     - stage: Tests
