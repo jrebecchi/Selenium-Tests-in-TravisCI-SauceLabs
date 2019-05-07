@@ -7,7 +7,10 @@
         "selenium-webdriver": "^4.0.0-alpha.1"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "start": "node src/app.js"
     },
-    "dependencies": {}
+    "dependencies": {
+        "express": "^4.16.4"
+    }
 }
