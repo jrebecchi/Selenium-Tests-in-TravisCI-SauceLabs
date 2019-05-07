@@ -4,7 +4,6 @@ node_js:
   - 10
 dist: trusty
 before_script:
-  - npm run start
   - sleep 2 # give Web server some time to bind to sockets, etc
 jobs:
   include:
@@ -12,6 +11,11 @@ jobs:
       script: npm run test
 before_install:
   - npm install
+  - docker-compose build
+  - docker-compose up -d
+  - sleep 3
+after_script:
+  - docker-compose kill
 addons:
   sauce_connect:
     username: JohannC

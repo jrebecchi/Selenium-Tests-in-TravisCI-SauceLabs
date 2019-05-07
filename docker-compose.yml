@@ -1,0 +1,19 @@
+app:
+  build: .
+  dockerfile: ./Dockerfile
+  ports:
+    - 3955
+  environment:
+    - IS_TEST=true
+  command: "node app.js"
+
+haproxy:
+  image: haproxy:1.5
+  volumes:
+     - ./cluster:/usr/local/etc/haproxy/
+  links:
+    - "app"
+  ports:
+    - 80:80
+  expose:
+    - "80"
