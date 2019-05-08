@@ -12,7 +12,9 @@ before_script:
   - docker-compose build
   - docker-compose up -d
   - sleep 8
-  - curl http://localhost:3955/
+  - curl http://localhost:3955/ || true
+  - curl http://localhost:80/ || true
+  - curl http://localhost:3000/ || true
 jobs:
   include:
     - stage: Tests
