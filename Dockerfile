@@ -16,4 +16,4 @@ CMD node src/app.js
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
