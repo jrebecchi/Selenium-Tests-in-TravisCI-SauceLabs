@@ -13,8 +13,7 @@ before_install:
   - npm install
   - docker-compose build
   - docker-compose up -d
-  - sleep 3
-  - curl http://localhost:80/
+  - sleep 8
   - curl http://localhost:3955/
 after_script:
   - docker-compose kill
