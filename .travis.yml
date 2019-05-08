@@ -4,21 +4,22 @@ node_js:
   - 10
 dist: trusty
 
-before_install:
-  - npm install -g node-gyp
 before_script:
-  - npm install
-  - npm install -g standard
-  - docker-compose build
-  - docker-compose up -d
-  - sleep 8
-  - curl http://localhost:3955/ || true
-  - curl http://localhost:80/ || true
-  - curl http://localhost:3000/ || true
+  - sleep 2 # give Web server some time to bind to sockets, etc
 jobs:
   include:
     - stage: Tests
       script: npm run test
+
+before_install:
+  - npm install
+  - docker-compose build
+  - docker-compose up -d
+  - sleep 8
+  - curl -i http://localhost:3955 || true
+  - curl -i http://localhost:80 || true
+  - curl -i http://localhost:3000 || true
+  - curl -i http://localhost:39500 || true
 after_script:
   - docker-compose kill
 addons:

@@ -2,7 +2,7 @@ app:
   build: .
   dockerfile: ./Dockerfile
   ports:
-    - 3955
+    - 80
   command: "node src/app.js"
 
 haproxy:
@@ -12,6 +12,6 @@ haproxy:
   links:
     - "app"
   ports:
-    - 80:80
+    - 39500:80
   expose:
     - "80"
