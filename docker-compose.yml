@@ -2,16 +2,5 @@ app:
   build: .
   dockerfile: ./Dockerfile
   ports:
-    - 80
-  command: "node src/app.js"
-
-haproxy:
-  image: haproxy:1.5
-  volumes:
-     - ./cluster:/usr/local/etc/haproxy/
-  links:
-    - "app"
-  ports:
     - 39500:80
-  expose:
-    - "39500"
+  command: "node src/app.js"
