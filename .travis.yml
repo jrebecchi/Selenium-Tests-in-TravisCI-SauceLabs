@@ -7,12 +7,12 @@ dist: trusty
 before_script:
   - sleep 2 # give Web server some time to bind to sockets, etc
 jobs:
-  # deploying demo server for end to end tests
-  deploy:
-    provider: heroku
-    api_key:
-      secure: "fh7ozFzY3X4bwoPh0vTIZriMJvVbb1bJvXI7pTtwY/CnUVc6TuU5nYtm2AZDIAVqkr4ku7iKIqjEpGq4H5KuXeFja1zxpspAUu//VqT0q2mlBFXwMZmGHaDyu8+nzIXu0LwMRQZzy24VbTwE8yvjENtDdqFG3ZEJxfhjGVMKyoJjFVT6F0wQSopoIKr4rEc6bTxtbE9nrm2cqfuHYgR6aJXG8lDkAg6ljcJi0Tr7uYe/DPZMi7u4pMokKMBWvRTXJBJUhWaMgNsp4B/GUy4S5cFRvjWYj1EsLI65Ku064YSI45zdryRhaLdfrA4fPoDvnIfbIMpQ9kQnTpMPxvFRwg2wJbL+86huNP6WNLb7BU756lCsBXAmvaz30egtjC8zeF1fQVspRZKlad4kguSZCWZvI62ozZFdoFqOrAOY3xMLeLTNl/13CHm2KZmbe1RcFub+vkrAINmugBbYT7f3L49KGv/Id//L+aU25EeFvAlOcOq6djlDdmxd/V112kZ9csYOA+NMxHvkZyLzm+XjrlotQ6UiP7iXy0yRLZy3fT7nQ6z219gT1UEEqET0N/CPtJdfVhtqb05QcKxzV7oPQlxzxyjYDMjSkwzVfecpq+3ZAblK9y7w6Zt6nPD2vldBZYbHS+wZzLerf9k45hm4nrhgJMGkjG3jHtkW3+xHN40="
   include:
+    - stage: deploying demo server for end to end tests
+      deploy:
+        provider: heroku
+        api_key:
+          secure: "fh7ozFzY3X4bwoPh0vTIZriMJvVbb1bJvXI7pTtwY/CnUVc6TuU5nYtm2AZDIAVqkr4ku7iKIqjEpGq4H5KuXeFja1zxpspAUu//VqT0q2mlBFXwMZmGHaDyu8+nzIXu0LwMRQZzy24VbTwE8yvjENtDdqFG3ZEJxfhjGVMKyoJjFVT6F0wQSopoIKr4rEc6bTxtbE9nrm2cqfuHYgR6aJXG8lDkAg6ljcJi0Tr7uYe/DPZMi7u4pMokKMBWvRTXJBJUhWaMgNsp4B/GUy4S5cFRvjWYj1EsLI65Ku064YSI45zdryRhaLdfrA4fPoDvnIfbIMpQ9kQnTpMPxvFRwg2wJbL+86huNP6WNLb7BU756lCsBXAmvaz30egtjC8zeF1fQVspRZKlad4kguSZCWZvI62ozZFdoFqOrAOY3xMLeLTNl/13CHm2KZmbe1RcFub+vkrAINmugBbYT7f3L49KGv/Id//L+aU25EeFvAlOcOq6djlDdmxd/V112kZ9csYOA+NMxHvkZyLzm+XjrlotQ6UiP7iXy0yRLZy3fT7nQ6z219gT1UEEqET0N/CPtJdfVhtqb05QcKxzV7oPQlxzxyjYDMjSkwzVfecpq+3ZAblK9y7w6Zt6nPD2vldBZYbHS+wZzLerf9k45hm4nrhgJMGkjG3jHtkW3+xHN40="
     - stage: Tests
       script: npm run test
 
