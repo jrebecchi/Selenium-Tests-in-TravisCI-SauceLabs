@@ -1,20 +1,22 @@
-sudo: true
+sudo: required
 language: node_js
 node_js:
   - 10
 dist: trusty
-before_script:
-  - sleep 2 # give Web server some time to bind to sockets, etc
-jobs:
-  include:
-    - stage: Tests
-      script: npm run test
+
 before_install:
+  - npm install -g node-gyp
+before_script:
   - npm install
+  - npm install -g standard
   - docker-compose build
   - docker-compose up -d
   - sleep 8
   - curl http://localhost:3955/
+jobs:
+  include:
+    - stage: Tests
+      script: npm run test
 after_script:
   - docker-compose kill
 addons:
@@ -22,3 +24,8 @@ addons:
     username: JohannC
     access_key:
       secure: "jrSvXK0P7Dr2A3wj6VeEj+RT1FvMXQJGUDYrY15VU/zM5Os+iFQ8JsDmw5D7tKu+n/rGNxwzDbHZz8j9jMe95e2rHFi0SJ9GQa4q0MS0SbEAo1pJByDY0qvbk9aVIoC3coq3mTLHxONOdpoOgFJa8UZ4GlSLy1fmgJ+2U0OChZOeYdKETUQfO9ttkFtmG5jK1IDygrpVb517ng7qboYGm3Zf6tyQ2PTVozPv2jyVmp+6T+mCjLIbmXH4jmJtLQRpvMh7vt1hLAvV+x4M4qs6WCUvBv8IPlAB0EdXtVCc1zk1UvZepZkUfbhgQTD25soQMhagbyAq03jfSP7Qa0wes0hUV6ZHO4n/lBmTwimBUGqF9nNw84ektJ3PjqIfCCdssrNqcLu1wDBlREEpWcA+UryhiKjIdpwLKekexUNC8/i17X+nO5ySNIOv8ct/xYB4FBC6alL6g4InG4JBLFI7yXTWj/2K8cjRzDJpwny88aFHoIsmPmMLz8zrCBWtIB4c11NG8b21rGsbmmF5/WRxdpEfHJaBhPhujd2bNULaFVwoggLXj4ySv3SQSj1SMTQKgmuqd6BdnBZuisOGJD4nHhkYbSEI1kgV899eHX4tVnOkpLs3CP8JAkhOKBBdo2+s5hmnz2i8/9UR3oiT35BB+zUHPKwkHFVoXmsnbv6jc4Q="
+services:
+  - docker
+cache:
+   directories:
+     - node_modules
