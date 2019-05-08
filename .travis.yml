@@ -16,10 +16,7 @@ before_install:
   - docker-compose build
   - docker-compose up -d
   - sleep 8
-  - curl -i http://localhost:3955 || true
-  - curl -i http://localhost:80 || true
-  - curl -i http://localhost:3000 || true
-  - curl -i http://localhost:39500 || true
+  - curl -i http://localhost:39500
 after_script:
   - docker-compose kill
 addons:
