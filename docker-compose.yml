@@ -3,7 +3,7 @@ app:
   dockerfile: ./Dockerfile
   ports:
     - 3955
-  command: "node app.js"
+  command: "node src/app.js"
 
 haproxy:
   image: haproxy:1.5
