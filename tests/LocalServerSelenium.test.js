@@ -41,7 +41,7 @@ browsers.map(function (browser) {
                 //console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
             });
 
-            await driver.get('http://localhost:39500');
+            await driver.get('https://travis-ci-selenium-test.herokuapp.com/');
             const element = await driver.findElement(webdriver.By.name('search'));
             await element.sendKeys('cross browser testing');
             const searchButton = await driver.findElement(webdriver.By.id('search_button'));
