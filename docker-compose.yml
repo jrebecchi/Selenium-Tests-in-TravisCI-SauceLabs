@@ -1,5 +1,6 @@
 app:
   build: .
+  dockerfile: ./Dockerfile
   ports:
     - 3955
   command: "node app.js"
