@@ -1,10 +1,7 @@
 app:
   build: .
-  dockerfile: ./Dockerfile
   ports:
     - 3955
-  environment:
-    - IS_TEST=true
   command: "node app.js"
 
 haproxy:
