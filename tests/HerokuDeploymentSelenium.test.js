@@ -1,7 +1,7 @@
-var username = 'JohannC'; //replace with your email address 
-var authkey = '22e26941-27d1-4713-aa3a-cacb0fd80ae7'; //replace with your authkey
+var username = process.env.SAUCE_LABS_USERNAME; //replace with your Sauce Labs email address or Username 
+var authkey = process.env.SAUCE_LABS_TOKEN; //replace with your own Sauce Labs authkey
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 60 * 30
-const rootURL = "https://travis-ci-selenium-test.herokuapp.com/";
+const rootURL = "https://travis-ci-selenium-sauce-labs.herokuapp.com/";
 
 var webdriver = require('selenium-webdriver'),
     SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
