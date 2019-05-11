@@ -49,7 +49,7 @@ npm run test
 You will need to adapt the `.travis.yml` file to allow Travis-CI to run this end-to-end test suit. Indeed, it uses [Heroku](https://heroku.com) to deploy a staging version of this app. Sauce Labs will then perform the end-to-end tests on this [Heroku](https://heroku.com) deployment.
 1. Create an [Heroku](https://heroku.com) account
 2. Create a [Sauce Labs](https://saucelabs.com) account
-For both services you can use your GitHub account.
+**Tip:** for both services you can use your GitHub account.
 3. Install the Travis-CI Command Line tool
 4. Configure Heroku
 Encrypt your Heroku access key:
