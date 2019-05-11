@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.svg?branch=master)](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing)
 
-# How to end-to-end test your Node.JS app with Jest, Selenium, Travis-CI, Heroku and Sauce Labs ?
+# How to end-to-end test your Node.JS app with Travis-CI ?
 
 This repo aims to give a very simple example of end-to-end tests performed on a Node.JS webapp, with a continuous integration service like Travis-CI.
 
-End-to-end test a Node.JS webapp means to perform automatic tests in a web browser of your app, with the exact same conditions as a real user.
+End-to-end test a webapp means to perform automatic tests of your app in a web browser, with the exact same conditions as a real user.
 
-# How does it work
+# How does it work ?
 In your local environment:
 * You will launch your web app locally
 * In another terminal, you will execute the Jest test suit
@@ -20,7 +20,7 @@ In your Travis-CI builds:
 * Selenium will communicate with Sauce Labs to have access to a graphical environment (which is not available in the Travis-CI virtual machines)
 * You will see the video capture of your e2e tests on saucelabs.com
 
-#Install and run the end-to-end test suit on your local environment:  
+# Install and run the end-to-end test suit on your local environment  
 ```bash
 #Clone repo
 git clone https://github.com/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.git
@@ -29,11 +29,13 @@ cd Travis-CI-Selenium-Sauce-Labs-E2E-Testing
 npm install
 #Run this minimalist app on you local environment
 npm run start
+```
+Open another terminal and type the following:
+```bash
 #Launch the end-to-end test suit
 npm run test
 ```
-
-#Configure Travis-CI to run the end-to-end test suit:
+# Configure Travis-CI to run the end-to-end test suit
 
 You will need to adapt the `.travis.yml` file to allow Travis-CI to run this end-to-end test suit. Indeed, it uses Heroku to deploy a staging version of this app. Sauce Labs will then perform the end-to-end tests on this heroku deployment.
 1. Create an Heroku account
