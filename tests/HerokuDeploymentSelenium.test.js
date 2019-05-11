@@ -1,7 +1,7 @@
 var username = 'JohannC'; //replace with your email address 
 var authkey = '22e26941-27d1-4713-aa3a-cacb0fd80ae7'; //replace with your authkey
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 60 * 30
-
+const rootURL = "https://travis-ci-selenium-test.herokuapp.com/";
 
 var webdriver = require('selenium-webdriver'),
     SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
@@ -28,36 +28,12 @@ browsers.map(function (browser) {
         password: authkey,
         'tunnel-identifier': process.env.TUNNEL_IDENTIFIER,
     };
-    it("Simple google test - "+browser.browserName, async function () {
-        try {
-            var driver = new webdriver.Builder()
-                .usingServer(remoteHub)
-                .withCapabilities(caps)
-                .build();
-
-            await driver.getSession().then(function (session) {
-                var sessionId = session.id_; //need for API calls
-                console.log('Session ID: ', sessionId);
-                //console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
-            });
-
-            await driver.get('http://www.google.com');
-            var element = await driver.findElement(webdriver.By.name('q'));
+    it("Test Foo Bar Research Engine - "+browser.browserName, async function () {
+            await driver.get(rootURL);
+            const element = await driver.findElement(webdriver.By.name('search'));
             await element.sendKeys('cross browser testing');
-            await element.submit();
-            await driver.getTitle().then(function (title) {
-                console.log("The title is: " + title);
-                if (title !== ('cross browser testing - Google Search')) {
-                    throw Error('Unexpected title: ' + title);
-                }
-            });
-            driver.quit();
-
-        }
-        catch (err) {
-            console.error('Exception!\n', err.stack, '\n');
-            driver.quit();
-            throw err;
-        }
+            const searchButton = await driver.findElement(webdriver.By.id('search_button'));
+            await searchButton.click();
+            await driver.findElement(webdriver.By.id('result'));
     });
 });
