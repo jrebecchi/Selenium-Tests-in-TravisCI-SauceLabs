@@ -6,7 +6,14 @@ This repo aims to give a very simple example of end-to-end tests performed on a 
 
 End-to-end test a webapp means to perform automatic tests of your app in a web browser, with the exact same conditions as a real user.
 
-# How does it work ?
+## How does it work ?
+The strategy used here to perform the end-to-end tests of your app either in your local environment or with Travis-CI, is based on the following technologies :
+* Jest: the JS test framework 
+* Selenium: the JS Library to perform web browser actions
+* Travis-CI: the continuous integration tool
+* Heroku: to deploy the app for testing purposes
+* Sauce Labs: giving access to a graphical environment to Selenium
+
 In your local environment:
 * You will launch your web app locally
 * In another terminal, you will execute the Jest test suit
@@ -18,9 +25,11 @@ In your Travis-CI builds:
 * Then it will launch your test suit with Jest
 * Jest will execute Selenium to perform the end-to-end tests
 * Selenium will communicate with Sauce Labs to have access to a graphical environment (which is not available in the Travis-CI virtual machines)
-* You will see the video capture of your e2e tests on saucelabs.com
+* You will see the video capture of your e2e tests on [Sauce Labs](https://saucelabs.com)
 
-# Install and run the end-to-end test suit on your local environment  
+##Installation
+
+### Install and run the end-to-end test suit on your local environment  
 ```bash
 #Clone repo
 git clone https://github.com/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.git
@@ -35,11 +44,11 @@ Open another terminal and type the following:
 #Launch the end-to-end test suit
 npm run test
 ```
-# Configure Travis-CI to run the end-to-end test suit
+### Configure Travis-CI to run the end-to-end test suit
 
-You will need to adapt the `.travis.yml` file to allow Travis-CI to run this end-to-end test suit. Indeed, it uses Heroku to deploy a staging version of this app. Sauce Labs will then perform the end-to-end tests on this heroku deployment.
-1. Create an Heroku account
-2. Create a Sauce Labs account
+You will need to adapt the `.travis.yml` file to allow Travis-CI to run this end-to-end test suit. Indeed, it uses [Heroku](https://heroku.com) to deploy a staging version of this app. Sauce Labs will then perform the end-to-end tests on this [Heroku](https://heroku.com) deployment.
+1. Create an [Heroku](https://heroku.com) account
+2. Create a [Sauce Labs](https://saucelabs.com) account
 For both services you can use your GitHub account.
 3. Install the Travis-CI Command Line tool
 4. Configure Heroku
@@ -65,7 +74,7 @@ env:
     - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL$
 ```
 6. Configure Sauce Labs:
-Encrypt your Sauce lab access key
+Encrypt your Sauce Labs access key
 ```bash
 #Replace with your own Sauce Labs access key
 travis encrypt xxxxxxxx-xxxx-xxxx-xxxxxxxxx
