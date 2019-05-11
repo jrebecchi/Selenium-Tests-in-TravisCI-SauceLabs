@@ -65,14 +65,14 @@ This command will generate you a hash that you will copy in the `.travis.yml` fi
       provider: heroku
       app: travis-ci-selenium-sauce-labs
       api_key:
-        secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE$
+        secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE
 ```
 Create an app on Heroku.com where will be deployed the staging app. You will enter in the public HTTP address of our heroku deployed app in the `.travis.yml` file:
 ```yaml
 #line 24
 env:
   global:
-    - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL$
+    - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL
 ```
 6. Configure Sauce Labs:
 Encrypt your Sauce Labs access key
@@ -84,9 +84,9 @@ This command will generate you a hash that you will copy in the `.travis.yml` fi
 ```yaml
 #line 20
 sauce_connect:
-    username: $REPLACE-WITH-YOUR-SAUCE-LABS-USERNAME$
+    username: $REPLACE-WITH-YOUR-SAUCE-LABS-USERNAME
     access_key:
-      secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE$
+      secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE
 ```
 Set the environment variables with your own Sauce Labs credentials:
 ```bash
@@ -98,9 +98,9 @@ This command will generate you a hash that you will copy in the `.travis.yml` fi
 #line 24
 env:
   global:
-    - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL$
-    - SAUCE_LABS_USERNAME=$REPLACE-WITH-YOUR-SAUCE-LABS-USERNAME$
-    - secure: $REPLACE-THE-HASH-HERE$
+    - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL
+    - SAUCE_LABS_USERNAME=$REPLACE-WITH-YOUR-SAUCE-LABS-USERNAME
+    - secure: $REPLACE-THE-HASH-HERE
 ```
 
 The configuration is now finished. Commit your changes and push it to your GitHub repo. 
