@@ -13,8 +13,7 @@ jobs:
       deploy: &heroku
         provider: heroku
         api_key:
-          secure: "fh7ozFzY3X4bwoPh0vTIZriMJvVbb1bJvXI7pTtwY/CnUVc6TuU5nYtm2AZDIAVqkr4ku7iKIqjEpGq4H5KuXeFja1zxpspAUu//VqT0q2mlBFXwMZmGHaDyu8+nzIXu0LwMRQZzy24VbTwE8yvjENtDdqFG3ZEJxfhjGVMKyoJjFVT6F0wQSopoIKr4rEc6bTxtbE9nrm2cqfuHYgR6aJXG8lDkAg6ljcJi0Tr7uYe/DPZMi7u4pMokKMBWvRTXJBJUhWaMgNsp4B/GUy4S5cFRvjWYj1EsLI65Ku064YSI45zdryRhaLdfrA4fPoDvnIfbIMpQ9kQnTpMPxvFRwg2wJbL+86huNP6WNLb7BU756lCsBXAmvaz30egtjC8zeF1fQVspRZKlad4kguSZCWZvI62ozZFdoFqOrAOY3xMLeLTNl/13CHm2KZmbe1RcFub+vkrAINmugBbYT7f3L49KGv/Id//L+aU25EeFvAlOcOq6djlDdmxd/V112kZ9csYOA+NMxHvkZyLzm+XjrlotQ6UiP7iXy0yRLZy3fT7nQ6z219gT1UEEqET0N/CPtJdfVhtqb05QcKxzV7oPQlxzxyjYDMjSkwzVfecpq+3ZAblK9y7w6Zt6nPD2vldBZYbHS+wZzLerf9k45hm4nrhgJMGkjG3jHtkW3+xHN40="
-    - stage: test staging
+          secure: "c+83paLIJWreBcZ1BRszZF4SOcEdeUbohfiJjMMSHnxgod4UaQzanEczIhJJzUsM6M5SZpz1FD2AKxkvU0VcKgieZT0cO4iqB39V+CZNs5vykwQOsy4z4VsbtdFqhMMHPJy07IvrSXQs/zAZBDZbq1IDxkSjFLcydU+sZKJHVk5tA62RPFQ9Ja+oTb7mWgwWTeFyFFkPNkDVEIrbL6+wY0koHUaFGsZmykVIpA1JknTNEjey+g9EmNpjsRfrXFSfm2cKhCD3Y70323M7n5T+VlcdrTgQ9pSIc/ZrcH44JSjBd1mpBwIoDOYvCToY/boKkEy2LwJc6XTVrZEtrQMWVw3HHr2ds7XaHiCv+IM0imp0P6Qd4sTj1+8qBRf0F2jUtm9re4crtQRJg0rz5p34g7T/m5z9obSZwVFmbhswMOCdAR8ftvv/bo6xuNWl3tYVZsEFqOh/El58ve2e0jZJcCMV31sNYweABDWG3QvwDunRYhvpUvnUWpjhhojjgLkKpaPHIARJsClxJXzaXn4gf6uCtkqYDZc2Xricy9neKTLSIxtJBOkjvqEIfORyzVggpNN5Lzo+wGSJyo2aiyfrO2I9Zup8nWAl30gd3SRdxzlqu48T0BwrXYP9YYw58ANMLO0XjwHiQETU/PjDtXs+fA6gYfqebYbhqNKYsLGlagI="    - stage: test staging
       script: 'curl https://travis-ci-selenium-test.herokuapp.com/'
       script: 'npm run test'
 before_install:
