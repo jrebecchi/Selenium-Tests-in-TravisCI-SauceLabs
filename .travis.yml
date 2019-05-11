@@ -9,7 +9,7 @@ jobs:
       script: skip
       deploy:
         provider: heroku
-        app: travis-ci-selenium-test
+        app: travis-ci-selenium-sauce-labs
         api_key:
           secure: "c+83paLIJWreBcZ1BRszZF4SOcEdeUbohfiJjMMSHnxgod4UaQzanEczIhJJzUsM6M5SZpz1FD2AKxkvU0VcKgieZT0cO4iqB39V+CZNs5vykwQOsy4z4VsbtdFqhMMHPJy07IvrSXQs/zAZBDZbq1IDxkSjFLcydU+sZKJHVk5tA62RPFQ9Ja+oTb7mWgwWTeFyFFkPNkDVEIrbL6+wY0koHUaFGsZmykVIpA1JknTNEjey+g9EmNpjsRfrXFSfm2cKhCD3Y70323M7n5T+VlcdrTgQ9pSIc/ZrcH44JSjBd1mpBwIoDOYvCToY/boKkEy2LwJc6XTVrZEtrQMWVw3HHr2ds7XaHiCv+IM0imp0P6Qd4sTj1+8qBRf0F2jUtm9re4crtQRJg0rz5p34g7T/m5z9obSZwVFmbhswMOCdAR8ftvv/bo6xuNWl3tYVZsEFqOh/El58ve2e0jZJcCMV31sNYweABDWG3QvwDunRYhvpUvnUWpjhhojjgLkKpaPHIARJsClxJXzaXn4gf6uCtkqYDZc2Xricy9neKTLSIxtJBOkjvqEIfORyzVggpNN5Lzo+wGSJyo2aiyfrO2I9Zup8nWAl30gd3SRdxzlqu48T0BwrXYP9YYw58ANMLO0XjwHiQETU/PjDtXs+fA6gYfqebYbhqNKYsLGlagI="
     - stage: test staging
