@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.svg?branch=master)](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing)
 
-# How to end-to-end test your Node.JS app with Travis-CI ?
+# End-to-end test your Node.JS app with Travis-CI
 
 This repo aims to give a very simple example of end-to-end tests performed on a Node.JS webapp, with a continuous integration service like Travis-CI.
 
@@ -27,7 +27,7 @@ In your Travis-CI builds:
 * Selenium will communicate with Sauce Labs to have access to a graphical environment (which is not available in the Travis-CI virtual machines)
 * You will see the video capture of your e2e tests on [Sauce Labs](https://saucelabs.com)
 
-##Installation
+## Installation
 
 ### Install and run the end-to-end test suit on your local environment  
 ```bash
