@@ -34,6 +34,7 @@ In your Travis-CI builds:
 #Clone repo
 git clone https://github.com/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.git
 cd Travis-CI-Selenium-Sauce-Labs-E2E-Testing
+git remote add origin https://github.com/$YOUR_USERNAME/$YOUR_REMOTE_REPO.git
 #Install dependencies
 npm install
 #Run this minimalist app on you local environment
