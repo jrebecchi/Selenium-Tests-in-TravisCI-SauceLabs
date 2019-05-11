@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var submit = function (e) {
+        var p = document.createElement("p");
+        p.id = "result";
+        p.innerHTML = document.getElementById("search_input").value;
+        document.body.appendChild(p)
+    }
+</script>
+
+<body>
+    <center>
+        <h2>Foo Bar Research Engine</h2>
+        Type a research:<br><br>
+        <input type="text" name="search" id="search_input">
+        <button id="search_button" onclick="submit()">Search</button>
+    </center>
+</body>
+
+</html>
