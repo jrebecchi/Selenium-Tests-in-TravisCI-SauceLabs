@@ -28,12 +28,23 @@ browsers.map(function (browser) {
         password: authkey,
         'tunnel-identifier': process.env.TUNNEL_IDENTIFIER,
     };
-    it("Test Foo Bar Research Engine - "+browser.browserName, async function () {
-            await driver.get(rootURL);
-            const element = await driver.findElement(webdriver.By.name('search'));
-            await element.sendKeys('cross browser testing');
-            const searchButton = await driver.findElement(webdriver.By.id('search_button'));
-            await searchButton.click();
-            await driver.findElement(webdriver.By.id('result'));
+    it("Test Foo Bar Research Engine - " + browser.browserName, async function () {
+        var driver = new webdriver.Builder()
+            .usingServer(remoteHub)
+            .withCapabilities(caps)
+            .build();
+
+        await driver.getSession().then(function (session) {
+            var sessionId = session.id_; //need for API calls
+            console.log('Session ID: ', sessionId);
+            //console.log('See your test run at: https://app.crossbrowsertesting.com/selenium/' + sessionId)
+        });
+        
+        await driver.get(rootURL);
+        const element = await driver.findElement(webdriver.By.name('search'));
+        await element.sendKeys('cross browser testing');
+        const searchButton = await driver.findElement(webdriver.By.id('search_button'));
+        await searchButton.click();
+        await driver.findElement(webdriver.By.id('result'));
     });
 });
