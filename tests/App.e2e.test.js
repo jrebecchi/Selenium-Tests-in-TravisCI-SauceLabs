@@ -2,7 +2,7 @@
     const webdriver = require('selenium-webdriver');
     const { launchSeleniumTest } = require('./Utils');
 
-    it("Test Foo Bar Research Engine", async function () {
+    it("End-to-end test this simplea app", async function () {
         await launchSeleniumTest(async driver => {
             await driver.getSession().then(function (session) {
                 var sessionId = session.id_; //need for API calls

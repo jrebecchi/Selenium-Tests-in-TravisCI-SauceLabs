@@ -6,7 +6,7 @@ require('chromedriver')
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 60 * 30
 
-const herokuURL = "https://travis-ci-selenium-sauce-labs.herokuapp.com/";
+const herokuURL = process.env.HEROKU_STAGING_DEPLOYMENT;
 const port = process.env.PORT || 80
 const localURL = 'http://localhost:' + port;
 
