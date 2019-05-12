@@ -50,10 +50,10 @@ npm run test
 You will need to adapt the `.travis.yml` file to allow Travis-CI to run this end-to-end test suit. Indeed, it uses [Heroku](https://heroku.com) to deploy a staging version of this app. Sauce Labs will then perform the end-to-end tests on this [Heroku](https://heroku.com) deployment.
 1. Create an [Heroku](https://heroku.com) account
 2. Create a [Sauce Labs](https://saucelabs.com) account
-**Tip:** for both services you can use your GitHub account.
-3. Install the Travis-CI Command Line tool
+<br/>**Tip:** for both services you can use your GitHub account.
+3. Install the [Travis-CI Command Line tool](https://docs.travis-ci.com/user/encryption-keys/#usage)
 4. Configure Heroku
-Encrypt your Heroku access key:
+<br />Encrypt your Heroku access key:
 ```bash
 #Replace with your own Heroku access key
 travis encrypt xxxxxxxx-xxxx-xxxx-xxxxxxxxx
@@ -67,7 +67,7 @@ This command will generate you a hash that you will copy in the `.travis.yml` fi
       api_key:
         secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE
 ```
-Create an app on Heroku.com where will be deployed the staging app. You will enter in the public HTTP address of our heroku deployed app in the `.travis.yml` file:
+Create an app on Heroku.com where will be deployed the staging app. You will enter in the public HTTP address of your heroku deployed app in the `.travis.yml` file:
 ```yaml
 #line 24
 env:
@@ -75,7 +75,7 @@ env:
     - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL
 ```
 6. Configure Sauce Labs:
-Encrypt your Sauce Labs access key
+<br />Encrypt your Sauce Labs access key
 ```bash
 #Replace with your own Sauce Labs access key
 travis encrypt xxxxxxxx-xxxx-xxxx-xxxxxxxxx
@@ -98,10 +98,12 @@ This command will generate you a hash that you will copy in the `.travis.yml` fi
 #line 24
 env:
   global:
-    - HEROKU_STAGING_DEPLOYMENT=$REPLACE-WITH-YOUR-HEROKU_APP_URL
+    - HEROKU_STAGING_DEPLOYMENT=http://...herokuapp.com/
     - SAUCE_LABS_USERNAME=$REPLACE-WITH-YOUR-SAUCE-LABS-USERNAME
-    - secure: $REPLACE-THE-HASH-HERE
+    - secure: $REPLACE-WITH-YOUR-GENERATED-HASH-HERE
 ```
 
-The configuration is now finished. Commit your changes and push it to your GitHub repo. 
+The configuration is now finished. Commit your changes and push it to your GitHub repo. You will have your end-to-end tests running on Travis-CI.
+
+Go check the video capture of those tests on [Sauce Labs](https://saucelabs.com).
 
