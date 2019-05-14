@@ -1,10 +1,14 @@
 [![Build Status](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.svg?branch=master)](https://travis-ci.org/JohannC/Travis-CI-Selenium-Sauce-Labs-E2E-Testing)
 
-# End-to-end test your Node.JS app with Travis-CI
+# End-to-end test your Node.JS app with Travis-CI - with Sauce Labs & Heroku
 
 This repo aims to give a very simple example of end-to-end tests performed on a Node.JS webapp, with a continuous integration service like Travis-CI.
 
 End-to-end test a webapp means to perform automatic tests of your app in a web browser, with the exact same conditions as a real user.
+
+This version uses [Sauce Labs](https://saucelabs.com) & [Heroku](https://heroku.com) to run your end-to-end tests during your Travis-CI builds. Thanks to [Sauce Labs](https://saucelabs.com) it is run on multiple web browsers (you will find the customizable list in `tests/Utils.js` line 16).
+
+However, you will have to adapt the Travis configuration with your own [Sauce Labs](https://saucelabs.com) / [Heroku](https://heroku.com) credentials and adapt the environment variables. If you don't want to do any kind of configuration please check my other [tutorial](https://github.com/JohannC/Travis-CI-Selenium-Xvfb-E2E-Testing), where I use Xvfb & Docker instead. This one works straight out of the box, but the test suit is only run in the Chrome Web Browser.
 
 ## How does it work ?
 The strategy used here to perform the end-to-end tests of your app either in your local environment or with Travis-CI, is based on the following technologies :
