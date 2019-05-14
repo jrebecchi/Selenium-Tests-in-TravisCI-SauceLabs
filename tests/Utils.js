@@ -6,10 +6,6 @@ require('chromedriver')
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 60 * 30
 
-const herokuURL = process.env.HEROKU_STAGING_DEPLOYMENT;
-const port = process.env.PORT || 80
-const localURL = 'http://localhost:' + port;
-
 const launchSeleniumTest = async testCallBack => {
 
     if (process.env.CONTINUOUS_INTEGRATION) {
@@ -41,16 +37,11 @@ const launchSeleniumTest = async testCallBack => {
                 .usingServer(remoteHub)
                 .withCapabilities(caps)
                 .build();
-            
-            await driver.get(herokuURL);
             await testCallBack(driver);
-            await driver.quit();
         })
     } else {
         const driver = await new webdriver.Builder().forBrowser('chrome').build();
-        await driver.get(localURL);
         await testCallBack(driver);
-        driver.quit();
     }
 }
 
