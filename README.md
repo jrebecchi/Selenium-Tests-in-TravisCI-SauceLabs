@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jrebecchi/Travis-CI-Selenium-Sauce-Labs-E2E-Testing.svg?branch=master)](https://travis-ci.org/jrebecchi/Travis-CI-Selenium-Sauce-Labs-E2E-Testing)
+[![Build Status](https://travis-ci.org/jrebecchi/Selenium-Tests-in-TravisCI-SauceLabs.svg?branch=master)](https://travis-ci.org/jrebecchi/Selenium-Tests-in-TravisCI-SauceLabs)
 
 ## End-to-end test your Node.JS app with Travis-CI - using Sauce Labs & Heroku
 
